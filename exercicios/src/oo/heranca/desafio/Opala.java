@@ -1,18 +1,49 @@
 package oo.heranca.desafio;
 
-public class Opala extends Carro {
+public class Opala extends Carro implements Esportivo, Luxo {
 
-	Opala() {
+	private boolean ligarTurbo = false;
+	private boolean ligarAr = false;
+
+	public Opala() {
 		this(220);
 	}
 
-	Opala(int velocidadeMaxima) {
+	public Opala(int velocidadeMaxima) {
 		super(velocidadeMaxima);
-		this.delta = 15;
+		setDelta(15);
 	}
 
-//	@Override
-//	void acelerar() {
-//		super.acelerar();
-//	}
+	@Override
+	public void ligarTurbo() {
+		ligarTurbo = true;
+	}
+
+	@Override
+	public void desligarTurbo() {
+		ligarTurbo = false;
+	}
+
+	@Override
+	public void ligarAr() {
+		ligarAr = true;
+	}
+
+	@Override
+	public void desligarAr() {
+		ligarAr = false;
+	}
+
+	@Override
+	public int getDelta() {
+		if (ligarTurbo && !ligarAr) {
+			return 35;
+		} else if (ligarTurbo && ligarAr) {
+			return 30;
+		} else if (!ligarTurbo && !ligarAr) {
+			return 20;
+		} else {
+			return 15;
+		}
+	}
 }

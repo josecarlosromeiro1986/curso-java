@@ -1,4 +1,8 @@
-package oo.heranca;
+package oo.heranca.teste;
+
+import oo.heranca.Direcao;
+import oo.heranca.Heroi;
+import oo.heranca.Monstro;
 
 public class Jogo {
 
@@ -15,10 +19,10 @@ public class Jogo {
 
 		monstro.atacar(heroi);
 		heroi.atacar(monstro);
-		
+
 		monstro.atacar(heroi);
 		heroi.atacar(monstro);
-		
+
 		monstro.andar(Direcao.NORTE);
 		monstro.atacar(heroi);
 		heroi.atacar(monstro);
